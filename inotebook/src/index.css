@@ -11,3 +11,406 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+i{
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff; /* Neutral background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px; /* Adjust padding if needed */
+}
+
+body {
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About.css */
+
+.text-center {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  /* text-transform: uppercase; */
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #c5e1f6, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+p {
+  font-size: 1.1rem;
+  color: #34495e;
+  line-height: 1.7;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2980b9;
+  margin-top: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+ul li:hover {
+  color: #2980b9;
+}
+
+
+.mt-3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* AddNote.css */
+
+/* Centered Form Container */
+.addnote-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #c8dff5;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.addnote-container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+.addnote-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input Fields */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  padding: 12px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.btn-add {
+  background: linear-gradient(to right, #226fdb, #004080);
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn-add:hover {
+  background: linear-gradient(to right, #004080, #226fdb);
+  transform: scale(1.05);
+}
+
+/* Placeholder Styling */
+.form-control::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Error Message */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* ===== Modal Styles ===== */
+.modal-content {
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Modal Header ===== */
+.modal-header {
+  background: linear-gradient(135deg, #77c5f2, #2a5298);
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* Close Button */
+.btn-close {
+  background: rgb(251, 247, 247);
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ===== Modal Body ===== */
+.modal-body {
+  padding: 20px;
+}
+
+/* Input Fields */
+.form-control {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  color: #2c3e50;
+}
+
+.form-control:focus {
+  border-color: #1e3c72;
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
+  transform: scale(1.02);
+}
+
+/* Labels */
+.form-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* ===== Modal Footer ===== */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 12px 18px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: linear-gradient(135deg, #7bd9f6, #2a5298);
+  color: rgb(254, 249, 249);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  transform: scale(1.05);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Login.css */
+
+
+.login-container {
+  max-width: 400px;
+  padding: 30px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #1c2833;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  background: #f8f9fa;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.5);
+}
+
+.btn-primary {
+  background: #2980b9;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #226fdb, #004080);
+  transform: scale(1.05);
+}
+
+#emailHelp {
+  font-size: 0.9rem;
+  color: #0d0606;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* login.css */
+.input-custom {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.input-custom:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.card {
+  background:linear-gradient(135deg, #c5e1f6, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* signup.css */
+.bg-light {
+  background-color: linear-gradient(135deg, #c5e1f6, #ffffff);
+}
+
+.input-custom {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.input-custom:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.card {
+  background:linear-gradient(135deg, #c5e1f6, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: scale(1.02);
+}
+
